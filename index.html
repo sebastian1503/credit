@@ -39,13 +39,16 @@
     }
   }
 
+  /* ── Mobile-first Basis ── */
+
   body {
     font-family: var(--sans);
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
-    padding: 2rem 1.25rem 4rem;
+    padding: 1.25rem 1rem 3rem;
     line-height: 1.6;
+    font-size: 16px;
   }
 
   .wrapper {
@@ -53,16 +56,16 @@
     margin: 0 auto;
   }
 
-  header { margin-bottom: 2rem; }
+  header { margin-bottom: 1.5rem; }
 
   header h1 {
-    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-size: 1.6rem;
     font-weight: 500;
     letter-spacing: -0.02em;
   }
 
   header p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--muted);
     margin-top: 4px;
   }
@@ -71,39 +74,39 @@
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 1.75rem;
+    padding: 1.25rem 1rem;
     box-shadow: var(--shadow);
   }
 
-  /* ── Inputs ── */
+  /* ── Inputs (mobile-first: 1 Spalte) ── */
   .inputs-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1.25rem;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
   }
 
   .field-full { grid-column: 1 / -1; }
 
   .field label {
     display: block;
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 0.07em;
-    margin-bottom: 7px;
+    margin-bottom: 8px;
   }
 
   .field input[type="number"] {
     width: 100%;
-    padding: 13px 14px;
+    padding: 16px 16px;
     border: 1px solid var(--border);
-    border-radius: 7px;
+    border-radius: 8px;
     background: var(--bg);
     color: var(--text);
     font-family: var(--mono);
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     appearance: none;
     -moz-appearance: textfield;
     transition: border-color 0.15s;
@@ -115,51 +118,51 @@
   .slider-wrap {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
   }
 
   .field input[type="range"] {
     flex: 1;
     -webkit-appearance: none;
     appearance: none;
-    height: 5px;
+    height: 6px;
     background: var(--border);
     border-radius: 3px;
     outline: none;
     cursor: pointer;
-    min-height: 44px; /* touch target */
+    min-height: 44px;
     background-clip: padding-box;
   }
 
   .field input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 22px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background: var(--accent);
-    border: 2px solid var(--surface);
+    border: 3px solid var(--surface);
     box-shadow: 0 0 0 1px var(--accent);
     cursor: pointer;
     transition: transform 0.1s;
   }
 
   .field input[type="range"]::-moz-range-thumb {
-    width: 22px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background: var(--accent);
-    border: 2px solid var(--surface);
+    border: 3px solid var(--surface);
     box-shadow: 0 0 0 1px var(--accent);
     cursor: pointer;
   }
 
-  .field input[type="range"]::-webkit-slider-thumb:active { transform: scale(1.15); }
+  .field input[type="range"]::-webkit-slider-thumb:active { transform: scale(1.12); }
 
   .slider-val {
     font-family: var(--mono);
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
-    min-width: 60px;
+    min-width: 72px;
     text-align: right;
     color: var(--text);
   }
@@ -168,36 +171,36 @@
   .metrics {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1.75rem;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
   }
 
   .metric {
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 1rem 1.1rem;
+    padding: 1rem 1rem;
   }
 
   .metric-label {
     font-size: 0.75rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.06em;
     color: var(--muted);
-    margin-bottom: 5px;
+    margin-bottom: 6px;
   }
 
   .metric-value {
     font-family: var(--mono);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--text);
     word-break: break-all;
   }
 
   .metric.highlight .metric-value {
-    font-size: 1.45rem;
+    font-size: 1.25rem;
     color: var(--accent);
   }
 
@@ -209,15 +212,15 @@
     flex-wrap: wrap;
     gap: 14px;
     margin-bottom: 10px;
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     color: var(--muted);
   }
 
   .legend-item { display: flex; align-items: center; gap: 6px; }
 
   .legend-dot {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 2px;
     flex-shrink: 0;
   }
@@ -225,103 +228,70 @@
   .chart-wrap {
     position: relative;
     width: 100%;
-    height: 260px;
+    height: 210px;
   }
 
   /* ── Formula ── */
   .formula-box {
-    margin-top: 1.5rem;
+    margin-top: 1.25rem;
     background: var(--bg);
     border: 1px solid var(--border);
     border-left: 3px solid var(--accent);
     border-radius: var(--radius);
-    padding: 1rem 1.25rem;
+    padding: 1rem 1.1rem;
   }
 
   .formula-box p {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color: var(--muted);
     margin-bottom: 6px;
   }
 
   .formula {
     font-family: var(--mono);
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     color: var(--text);
     line-height: 1.9;
   }
 
   footer {
-    margin-top: 2rem;
+    margin-top: 1.75rem;
     text-align: center;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     color: var(--muted);
   }
 
   /* ── Breakpoints ── */
 
-  /* Tablet hoch / kleines Laptop: 481–768px */
-  @media (min-width: 481px) and (max-width: 768px) {
-    .inputs-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .chart-wrap  { height: 240px; }
+  /* Tablet hoch: 540px+ → 2-spaltige Inputs */
+  @media (min-width: 540px) {
+    body { padding: 1.75rem 1.25rem 4rem; }
+    .card { padding: 1.5rem; }
+    .inputs-grid { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .field input[type="number"] { padding: 13px 14px; font-size: 1.05rem; }
+    .field input[type="range"]::-webkit-slider-thumb { width: 22px; height: 22px; }
+    .field input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; }
+    .slider-val { font-size: 1rem; min-width: 60px; }
+    .metric-value { font-size: 1.2rem; }
+    .metric.highlight .metric-value { font-size: 1.4rem; }
+    .chart-wrap { height: 240px; }
   }
 
-  /* Großes Tablet / kleines Laptop: 769–1024px */
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .chart-wrap { height: 280px; }
+  /* Tablet quer / kleines Laptop: 769px+ */
+  @media (min-width: 769px) {
+    body { padding: 2rem 1.5rem 4rem; }
+    .card { padding: 1.75rem; }
+    .chart-wrap { height: 270px; }
+    .metric-value { font-size: 1.25rem; }
+    .metric.highlight .metric-value { font-size: 1.5rem; }
   }
 
-  /* Breites Desktop: >1200px */
+  /* Breites Desktop: 1200px+ */
   @media (min-width: 1200px) {
-    .wrapper   { max-width: 900px; }
+    .wrapper { max-width: 900px; }
     .chart-wrap { height: 300px; }
     .metric-value { font-size: 1.3rem; }
     .metric.highlight .metric-value { font-size: 1.6rem; }
-  }
-
-  /* Mobil: ≤480px – größere Touch-Targets, 1 Spalte Inputs */
-  @media (max-width: 480px) {
-    body { padding: 1rem 0.875rem 3rem; }
-
-    .card { padding: 1.1rem; }
-
-    .inputs-grid {
-      grid-template-columns: 1fr;   /* 1-spaltig auf Handy */
-      gap: 1rem;
-    }
-
-    .field input[type="number"] {
-      padding: 15px 14px;           /* größer, besser tippbar */
-      font-size: 1.1rem;
-    }
-
-    .field input[type="range"] { height: 6px; }
-
-    .field input[type="range"]::-webkit-slider-thumb {
-      width: 26px;
-      height: 26px;
-    }
-
-    .slider-val { font-size: 1.05rem; min-width: 66px; }
-
-    /* Metrics bleiben 2×2 auch auf Handy */
-    .metrics { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-
-    .metric { padding: 0.85rem 0.9rem; }
-    .metric-label { font-size: 0.7rem; }
-    .metric-value { font-size: 1.05rem; }
-    .metric.highlight .metric-value { font-size: 1.2rem; }
-
-    .chart-wrap { height: 200px; }
-
-    .formula { font-size: 0.82rem; }
-  }
-
-  /* Extra kleine Handys: ≤360px */
-  @media (max-width: 360px) {
-    .metric-value { font-size: 0.95rem; }
-    .metric.highlight .metric-value { font-size: 1.1rem; }
-    .chart-wrap { height: 180px; }
   }
 </style>
 </head>
